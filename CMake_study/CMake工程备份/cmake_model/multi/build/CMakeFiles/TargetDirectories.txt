@@ -1,0 +1,14 @@
+/home/mdl7/projects/helloworld/multi/build/CMakeFiles/rebuild_cache.dir
+/home/mdl7/projects/helloworld/multi/build/CMakeFiles/edit_cache.dir
+/home/mdl7/projects/helloworld/multi/build/calc/CMakeFiles/rebuild_cache.dir
+/home/mdl7/projects/helloworld/multi/build/calc/CMakeFiles/calc.dir
+/home/mdl7/projects/helloworld/multi/build/calc/CMakeFiles/edit_cache.dir
+/home/mdl7/projects/helloworld/multi/build/sort/CMakeFiles/rebuild_cache.dir
+/home/mdl7/projects/helloworld/multi/build/sort/CMakeFiles/sort.dir
+/home/mdl7/projects/helloworld/multi/build/sort/CMakeFiles/edit_cache.dir
+/home/mdl7/projects/helloworld/multi/build/test1/CMakeFiles/rebuild_cache.dir
+/home/mdl7/projects/helloworld/multi/build/test1/CMakeFiles/test1.dir
+/home/mdl7/projects/helloworld/multi/build/test1/CMakeFiles/edit_cache.dir
+/home/mdl7/projects/helloworld/multi/build/test2/CMakeFiles/rebuild_cache.dir
+/home/mdl7/projects/helloworld/multi/build/test2/CMakeFiles/test2.dir
+/home/mdl7/projects/helloworld/multi/build/test2/CMakeFiles/edit_cache.dir

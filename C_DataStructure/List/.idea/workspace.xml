@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="CMakePresetLoader">{
+  &quot;useNewFormat&quot;: true
+}</component>
+  <component name="CMakeReloadState">
+    <option name="reloaded" value="true" />
+  </component>
+  <component name="CMakeRunConfigurationManager">
+    <generated>
+      <config projectName="List" targetName="List" />
+    </generated>
+  </component>
+  <component name="CMakeSettings">
+    <configurations>
+      <configuration PROFILE_NAME="Debug" ENABLED="true" CONFIG_NAME="Debug" />
+    </configurations>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="32bfc936-93b1-4655-8baf-baf2d895c714" name="更改" comment="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;List/List.c&#10;#&#9;List/cmake-build-debug/CMakeCache.txt&#10;#&#9;List/cmake-build-debug/CMakeFiles/TargetDirectories.txt&#10;#&#9;List/cmake-build-debug/CMakeFiles/clion-Debug-log.txt&#10;#&#9;List/cmake-build-debug/CMakeFiles/clion-environment.txt&#10;#&#9;List/cmake-build-debug/List.exe&#10;#&#9;List/cmake-build-debug/Testing/Temporary/LastTest.log&#10;#&#9;List/cmake-build-debug/cmake_install.cmake" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
+  <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="amxl &lt;951546132@qq.com&gt;" />
+      </list>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectApplicationVersion">
+    <option name="ide" value="CLion" />
+    <option name="majorVersion" value="2023" />
+    <option name="minorVersion" value="3.3" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 1
+}</component>
+  <component name="ProjectId" id="2faSOZYD7zjVLnycdBuba3gQgX4" />
+  <component name="ProjectLevelVcsManager">
+    <OptionsSetting value="false" id="Update" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "CMake 应用程序.List.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "RunOnceActivity.readMode.enableVisualFormatting": "true",
+    "cf.first.check.clang-format": "false",
+    "cidr.known.project.marker": "true",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "C:/Users/MDL/Desktop/C_DataStructure/List/CMakeLists.txt",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "settings.sync",
+    "structure.view.defaults.are.configured": "true",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RunManager">
+    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="List" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="List" TARGET_NAME="List" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="List" RUN_TARGET_NAME="List">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="默认任务">
+      <changelist id="32bfc936-93b1-4655-8baf-baf2d895c714" name="更改" comment="" />
+      <created>1714037665243</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1714037665243</updated>
+      <workItem from="1714037667399" duration="3207000" />
+      <workItem from="1714296972518" duration="13000" />
+      <workItem from="1714297022397" duration="82000" />
+      <workItem from="1714297111634" duration="332000" />
+      <workItem from="1714297454484" duration="28000" />
+      <workItem from="1714297499551" duration="123000" />
+      <workItem from="1714737740244" duration="14000" />
+      <workItem from="1714961377743" duration="1647000" />
+      <workItem from="1715087526409" duration="6475000" />
+    </task>
+    <task id="LOCAL-00001" summary="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;List/CMakeLists.txt&#10;#&#9;List/List.c&#10;#&#9;List/cmake-build-debug/CMakeCache.txt&#10;#&#9;List/cmake-build-debug/CMakeFiles/List.dir/List.c.obj&#10;#&#9;List/cmake-build-debug/CMakeFiles/TargetDirectories.txt&#10;#&#9;List/cmake-build-debug/CMakeFiles/clion-Debug-log.txt&#10;#&#9;List/cmake-build-debug/CMakeFiles/clion-environment.txt&#10;#&#9;List/cmake-build-debug/List.exe&#10;#&#9;List/cmake-build-debug/Testing/Temporary/LastTest.log&#10;#&#9;List/cmake-build-debug/cmake_install.cmake">
+      <option name="closed" value="true" />
+      <created>1715093486673</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1715093486673</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;List/CMakeLists.txt&#10;#&#9;List/List.c&#10;#&#9;List/cmake-build-debug/CMakeCache.txt&#10;#&#9;List/cmake-build-debug/CMakeFiles/List.dir/List.c.obj&#10;#&#9;List/cmake-build-debug/CMakeFiles/TargetDirectories.txt&#10;#&#9;List/cmake-build-debug/CMakeFiles/clion-Debug-log.txt&#10;#&#9;List/cmake-build-debug/CMakeFiles/clion-environment.txt&#10;#&#9;List/cmake-build-debug/List.exe&#10;#&#9;List/cmake-build-debug/Testing/Temporary/LastTest.log&#10;#&#9;List/cmake-build-debug/cmake_install.cmake">
+      <option name="closed" value="true" />
+      <created>1715093495233</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1715093495233</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;List/List.c&#10;#&#9;List/cmake-build-debug/CMakeCache.txt&#10;#&#9;List/cmake-build-debug/CMakeFiles/TargetDirectories.txt&#10;#&#9;List/cmake-build-debug/CMakeFiles/clion-Debug-log.txt&#10;#&#9;List/cmake-build-debug/CMakeFiles/clion-environment.txt&#10;#&#9;List/cmake-build-debug/List.exe&#10;#&#9;List/cmake-build-debug/Testing/Temporary/LastTest.log&#10;#&#9;List/cmake-build-debug/cmake_install.cmake">
+      <option name="closed" value="true" />
+      <created>1715093527574</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1715093527574</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;List/List.c&#10;#&#9;List/cmake-build-debug/CMakeCache.txt&#10;#&#9;List/cmake-build-debug/CMakeFiles/TargetDirectories.txt&#10;#&#9;List/cmake-build-debug/CMakeFiles/clion-Debug-log.txt&#10;#&#9;List/cmake-build-debug/CMakeFiles/clion-environment.txt&#10;#&#9;List/cmake-build-debug/List.exe&#10;#&#9;List/cmake-build-debug/Testing/Temporary/LastTest.log&#10;#&#9;List/cmake-build-debug/cmake_install.cmake">
+      <option name="closed" value="true" />
+      <created>1715093699241</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1715093699241</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VCPKGProject">
+    <isAutomaticCheckingOnLaunch value="false" />
+    <isAutomaticFoundErrors value="true" />
+    <isAutomaticReloadCMake value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;List/CMakeLists.txt&#10;#&#9;List/List.c&#10;#&#9;List/cmake-build-debug/CMakeCache.txt&#10;#&#9;List/cmake-build-debug/CMakeFiles/List.dir/List.c.obj&#10;#&#9;List/cmake-build-debug/CMakeFiles/TargetDirectories.txt&#10;#&#9;List/cmake-build-debug/CMakeFiles/clion-Debug-log.txt&#10;#&#9;List/cmake-build-debug/CMakeFiles/clion-environment.txt&#10;#&#9;List/cmake-build-debug/List.exe&#10;#&#9;List/cmake-build-debug/Testing/Temporary/LastTest.log&#10;#&#9;List/cmake-build-debug/cmake_install.cmake" />
+    <MESSAGE value="删除文件 List/.idea" />
+    <MESSAGE value="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;List/List.c&#10;#&#9;List/cmake-build-debug/CMakeCache.txt&#10;#&#9;List/cmake-build-debug/CMakeFiles/TargetDirectories.txt&#10;#&#9;List/cmake-build-debug/CMakeFiles/clion-Debug-log.txt&#10;#&#9;List/cmake-build-debug/CMakeFiles/clion-environment.txt&#10;#&#9;List/cmake-build-debug/List.exe&#10;#&#9;List/cmake-build-debug/Testing/Temporary/LastTest.log&#10;#&#9;List/cmake-build-debug/cmake_install.cmake" />
+    <option name="LAST_COMMIT_MESSAGE" value="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;List/List.c&#10;#&#9;List/cmake-build-debug/CMakeCache.txt&#10;#&#9;List/cmake-build-debug/CMakeFiles/TargetDirectories.txt&#10;#&#9;List/cmake-build-debug/CMakeFiles/clion-Debug-log.txt&#10;#&#9;List/cmake-build-debug/CMakeFiles/clion-environment.txt&#10;#&#9;List/cmake-build-debug/List.exe&#10;#&#9;List/cmake-build-debug/Testing/Temporary/LastTest.log&#10;#&#9;List/cmake-build-debug/cmake_install.cmake" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>

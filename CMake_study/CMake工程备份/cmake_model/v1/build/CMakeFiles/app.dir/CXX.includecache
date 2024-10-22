@@ -1,0 +1,38 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/mdl7/projects/helloworld/v1/src/add.cpp
+stdio.h
+-
+head.h
+/home/mdl7/projects/helloworld/v1/src/head.h
+
+/home/mdl7/projects/helloworld/v1/src/div.cpp
+stdio.h
+-
+head.h
+/home/mdl7/projects/helloworld/v1/src/head.h
+
+/home/mdl7/projects/helloworld/v1/src/main.cpp
+stdio.h
+-
+head.h
+/home/mdl7/projects/helloworld/v1/src/head.h
+
+/home/mdl7/projects/helloworld/v1/src/mult.cpp
+stdio.h
+-
+head.h
+/home/mdl7/projects/helloworld/v1/src/head.h
+
+/home/mdl7/projects/helloworld/v1/src/sub.cpp
+stdio.h
+-
+head.h
+/home/mdl7/projects/helloworld/v1/src/head.h
+

@@ -1,0 +1,1 @@
+/usr/bin/c++     CMakeFiles/app.dir/main.cpp.o  -o /home/mdl7/projects/helloworld/exe/app  -L/home/mdl7/projects/helloworld/v3/lib2 -Wl,-rpath,/home/mdl7/projects/helloworld/v3/lib2 -lcalc 

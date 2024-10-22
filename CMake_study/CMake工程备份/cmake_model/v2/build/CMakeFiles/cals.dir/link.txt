@@ -1,0 +1,2 @@
+/usr/bin/ar qc ../lib/libcals.a  CMakeFiles/cals.dir/src/add.cpp.o CMakeFiles/cals.dir/src/div.cpp.o CMakeFiles/cals.dir/src/mult.cpp.o CMakeFiles/cals.dir/src/sub.cpp.o
+/usr/bin/ranlib ../lib/libcals.a

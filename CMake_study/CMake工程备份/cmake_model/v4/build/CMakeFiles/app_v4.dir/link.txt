@@ -1,0 +1,1 @@
+/usr/bin/c++     CMakeFiles/app_v4.dir/src/add.cpp.o CMakeFiles/app_v4.dir/src/div.cpp.o CMakeFiles/app_v4.dir/src/main.cpp.o CMakeFiles/app_v4.dir/src/mult.cpp.o CMakeFiles/app_v4.dir/src/sub.cpp.o  -o /home/mdl7/projects/helloworld/exe/app_v4  -L/home/mdl7/projects/helloworld/v4/lib2 -Wl,-rpath,/home/mdl7/projects/helloworld/v4/lib2 -lcalc 

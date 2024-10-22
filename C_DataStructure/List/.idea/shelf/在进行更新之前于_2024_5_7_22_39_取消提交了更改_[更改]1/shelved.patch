@@ -1,0 +1,1461 @@
+Index: List.c
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>#include <stdio.h>\r\n#include <stdlib.h>\r\n\r\ntypedef struct node{\r\n    int data;\r\n    struct node *link;\r\n}node;\r\n\r\nint main(){\r\n    node * A=NULL;\r\n    node * temp=(node *)malloc(sizeof(node));\r\n    temp->data=2;\r\n    temp->link=NULL;\r\n    A=temp;\r\n}\r\n\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/List.c b/List.c
+--- a/List.c	
++++ b/List.c	
+@@ -1,17 +1,48 @@
+ #include <stdio.h>
+ #include <stdlib.h>
+ 
+-typedef struct node{
+-    int data;
+-    struct node *link;
+-}node;
++typedef struct List_Node {
++    int data;//存储自身的数据
++    struct List_Node *next;//存储下一个节点的地址
++} node;
+ 
+-int main(){
+-    node * A=NULL;
+-    node * temp=(node *)malloc(sizeof(node));
+-    temp->data=2;
+-    temp->link=NULL;
+-    A=temp;
++node *head = NULL;/*创建头节点*/
++void Head_Insert(int x);
++
++void Anywhere_Insert(int x);
++
++void Anywhere_Delete(int x);
++
++void Print();
++
++int main() {
++    printf("How many numbers do you want to add to this linked list?\n");
++    int numbers, num;
++    scanf("%d", &numbers);
++    for (int i = 0; i < numbers; i++) {
++        printf("Enter the number\n");
++        scanf("%d", &num);
++        Head_Insert(num);
++        Print();
++    }
+ }
+ 
++void Head_Insert(int x) { /*头部插入操作*/
++    node *temp = (node *) malloc(sizeof(struct List_Node));
++    temp->data = x;
++    temp->next = NULL;
++    if (head != NULL) { /*头节点不为空，即列表不为空时，将临时节点的next指向原本头节点指向的地址*/
++        temp->next = head;
++    }
++    head = temp;/*让头节点指向临时节点*/
++}
+ 
++void Print() {  /*使用临时指针来遍历整个链表*/
++    node *temp = head;
++    printf("List is ");
++    while (temp != NULL) {
++        printf(" %d", temp->data);
++        temp = temp->next;
++    }
++    printf("\n");
++}
+\ No newline at end of file
+Index: cmake-build-debug/.cmake/api/v1/reply/index-2024-04-25T15-25-28-0698.json
+===================================================================
+diff --git a/cmake-build-debug/.cmake/api/v1/reply/index-2024-04-25T15-25-28-0698.json b/cmake-build-debug/.cmake/api/v1/reply/index-2024-04-25T15-25-28-0698.json
+deleted file mode 100644
+--- a/cmake-build-debug/.cmake/api/v1/reply/index-2024-04-25T15-25-28-0698.json	
++++ /dev/null	
+@@ -1,108 +0,0 @@
+-{
+-	"cmake" : 
+-	{
+-		"generator" : 
+-		{
+-			"multiConfig" : false,
+-			"name" : "Ninja"
+-		},
+-		"paths" : 
+-		{
+-			"cmake" : "C:/Program Files/JetBrains/CLion 2023.1.5/bin/cmake/win/x64/bin/cmake.exe",
+-			"cpack" : "C:/Program Files/JetBrains/CLion 2023.1.5/bin/cmake/win/x64/bin/cpack.exe",
+-			"ctest" : "C:/Program Files/JetBrains/CLion 2023.1.5/bin/cmake/win/x64/bin/ctest.exe",
+-			"root" : "C:/Program Files/JetBrains/CLion 2023.1.5/bin/cmake/win/x64/share/cmake-3.27"
+-		},
+-		"version" : 
+-		{
+-			"isDirty" : false,
+-			"major" : 3,
+-			"minor" : 27,
+-			"patch" : 8,
+-			"string" : "3.27.8",
+-			"suffix" : ""
+-		}
+-	},
+-	"objects" : 
+-	[
+-		{
+-			"jsonFile" : "codemodel-v2-6515d17921c909b76306.json",
+-			"kind" : "codemodel",
+-			"version" : 
+-			{
+-				"major" : 2,
+-				"minor" : 6
+-			}
+-		},
+-		{
+-			"jsonFile" : "cache-v2-74fc55bc4aa4261ce31f.json",
+-			"kind" : "cache",
+-			"version" : 
+-			{
+-				"major" : 2,
+-				"minor" : 0
+-			}
+-		},
+-		{
+-			"jsonFile" : "cmakeFiles-v1-7105a8291374bce47ed7.json",
+-			"kind" : "cmakeFiles",
+-			"version" : 
+-			{
+-				"major" : 1,
+-				"minor" : 0
+-			}
+-		},
+-		{
+-			"jsonFile" : "toolchains-v1-6c02aafb8f2e3c17608c.json",
+-			"kind" : "toolchains",
+-			"version" : 
+-			{
+-				"major" : 1,
+-				"minor" : 0
+-			}
+-		}
+-	],
+-	"reply" : 
+-	{
+-		"cache-v2" : 
+-		{
+-			"jsonFile" : "cache-v2-74fc55bc4aa4261ce31f.json",
+-			"kind" : "cache",
+-			"version" : 
+-			{
+-				"major" : 2,
+-				"minor" : 0
+-			}
+-		},
+-		"cmakeFiles-v1" : 
+-		{
+-			"jsonFile" : "cmakeFiles-v1-7105a8291374bce47ed7.json",
+-			"kind" : "cmakeFiles",
+-			"version" : 
+-			{
+-				"major" : 1,
+-				"minor" : 0
+-			}
+-		},
+-		"codemodel-v2" : 
+-		{
+-			"jsonFile" : "codemodel-v2-6515d17921c909b76306.json",
+-			"kind" : "codemodel",
+-			"version" : 
+-			{
+-				"major" : 2,
+-				"minor" : 6
+-			}
+-		},
+-		"toolchains-v1" : 
+-		{
+-			"jsonFile" : "toolchains-v1-6c02aafb8f2e3c17608c.json",
+-			"kind" : "toolchains",
+-			"version" : 
+-			{
+-				"major" : 1,
+-				"minor" : 0
+-			}
+-		}
+-	}
+-}
+Index: cmake-build-debug/.cmake/api/v1/reply/cache-v2-74fc55bc4aa4261ce31f.json
+===================================================================
+diff --git a/cmake-build-debug/.cmake/api/v1/reply/cache-v2-74fc55bc4aa4261ce31f.json b/cmake-build-debug/.cmake/api/v1/reply/cache-v2-74fc55bc4aa4261ce31f.json
+deleted file mode 100644
+--- a/cmake-build-debug/.cmake/api/v1/reply/cache-v2-74fc55bc4aa4261ce31f.json	
++++ /dev/null	
+@@ -1,1183 +0,0 @@
+-{
+-	"entries" : 
+-	[
+-		{
+-			"name" : "CMAKE_ADDR2LINE",
+-			"properties" : 
+-			[
+-				{
+-					"name" : "ADVANCED",
+-					"value" : "1"
+-				},
+-				{
+-					"name" : "HELPSTRING",
+-					"value" : "Path to a program."
+-				}
+-			],
+-			"type" : "FILEPATH",
+-			"value" : "C:/Program Files/JetBrains/CLion 2023.1.5/bin/mingw/bin/addr2line.exe"
+-		},
+-		{
+-			"name" : "CMAKE_AR",
+-			"properties" : 
+-			[
+-				{
+-					"name" : "ADVANCED",
+-					"value" : "1"
+-				},
+-				{
+-					"name" : "HELPSTRING",
+-					"value" : "Path to a program."
+-				}
+-			],
+-			"type" : "FILEPATH",
+-			"value" : "C:/Program Files/JetBrains/CLion 2023.1.5/bin/mingw/bin/ar.exe"
+-		},
+-		{
+-			"name" : "CMAKE_BUILD_TYPE",
+-			"properties" : 
+-			[
+-				{
+-					"name" : "HELPSTRING",
+-					"value" : "Choose the type of build, options are: None Debug Release RelWithDebInfo MinSizeRel ..."
+-				}
+-			],
+-			"type" : "STRING",
+-			"value" : "Debug"
+-		},
+-		{
+-			"name" : "CMAKE_CACHEFILE_DIR",
+-			"properties" : 
+-			[
+-				{
+-					"name" : "HELPSTRING",
+-					"value" : "This is the directory where this CMakeCache.txt was created"
+-				}
+-			],
+-			"type" : "INTERNAL",
+-			"value" : "c:/Users/MDL/Desktop/C_DataStructure/List/cmake-build-debug"
+-		},
+-		{
+-			"name" : "CMAKE_CACHE_MAJOR_VERSION",
+-			"properties" : 
+-			[
+-				{
+-					"name" : "HELPSTRING",
+-					"value" : "Major version of cmake used to create the current loaded cache"
+-				}
+-			],
+-			"type" : "INTERNAL",
+-			"value" : "3"
+-		},
+-		{
+-			"name" : "CMAKE_CACHE_MINOR_VERSION",
+-			"properties" : 
+-			[
+-				{
+-					"name" : "HELPSTRING",
+-					"value" : "Minor version of cmake used to create the current loaded cache"
+-				}
+-			],
+-			"type" : "INTERNAL",
+-			"value" : "27"
+-		},
+-		{
+-			"name" : "CMAKE_CACHE_PATCH_VERSION",
+-			"properties" : 
+-			[
+-				{
+-					"name" : "HELPSTRING",
+-					"value" : "Patch version of cmake used to create the current loaded cache"
+-				}
+-			],
+-			"type" : "INTERNAL",
+-			"value" : "8"
+-		},
+-		{
+-			"name" : "CMAKE_COLOR_DIAGNOSTICS",
+-			"properties" : 
+-			[
+-				{
+-					"name" : "HELPSTRING",
+-					"value" : "Enable colored diagnostics throughout."
+-				}
+-			],
+-			"type" : "BOOL",
+-			"value" : "ON"
+-		},
+-		{
+-			"name" : "CMAKE_COMMAND",
+-			"properties" : 
+-			[
+-				{
+-					"name" : "HELPSTRING",
+-					"value" : "Path to CMake executable."
+-				}
+-			],
+-			"type" : "INTERNAL",
+-			"value" : "C:/Program Files/JetBrains/CLion 2023.1.5/bin/cmake/win/x64/bin/cmake.exe"
+-		},
+-		{
+-			"name" : "CMAKE_CPACK_COMMAND",
+-			"properties" : 
+-			[
+-				{
+-					"name" : "HELPSTRING",
+-					"value" : "Path to cpack program executable."
+-				}
+-			],
+-			"type" : "INTERNAL",
+-			"value" : "C:/Program Files/JetBrains/CLion 2023.1.5/bin/cmake/win/x64/bin/cpack.exe"
+-		},
+-		{
+-			"name" : "CMAKE_CTEST_COMMAND",
+-			"properties" : 
+-			[
+-				{
+-					"name" : "HELPSTRING",
+-					"value" : "Path to ctest program executable."
+-				}
+-			],
+-			"type" : "INTERNAL",
+-			"value" : "C:/Program Files/JetBrains/CLion 2023.1.5/bin/cmake/win/x64/bin/ctest.exe"
+-		},
+-		{
+-			"name" : "CMAKE_C_COMPILER",
+-			"properties" : 
+-			[
+-				{
+-					"name" : "ADVANCED",
+-					"value" : "1"
+-				},
+-				{
+-					"name" : "HELPSTRING",
+-					"value" : "C compiler"
+-				}
+-			],
+-			"type" : "FILEPATH",
+-			"value" : "C:/Program Files/JetBrains/CLion 2023.1.5/bin/mingw/bin/gcc.exe"
+-		},
+-		{
+-			"name" : "CMAKE_C_COMPILER_AR",
+-			"properties" : 
+-			[
+-				{
+-					"name" : "ADVANCED",
+-					"value" : "1"
+-				},
+-				{
+-					"name" : "HELPSTRING",
+-					"value" : "A wrapper around 'ar' adding the appropriate '--plugin' option for the GCC compiler"
+-				}
+-			],
+-			"type" : "FILEPATH",
+-			"value" : "C:/Program Files/JetBrains/CLion 2023.1.5/bin/mingw/bin/gcc-ar.exe"
+-		},
+-		{
+-			"name" : "CMAKE_C_COMPILER_RANLIB",
+-			"properties" : 
+-			[
+-				{
+-					"name" : "ADVANCED",
+-					"value" : "1"
+-				},
+-				{
+-					"name" : "HELPSTRING",
+-					"value" : "A wrapper around 'ranlib' adding the appropriate '--plugin' option for the GCC compiler"
+-				}
+-			],
+-			"type" : "FILEPATH",
+-			"value" : "C:/Program Files/JetBrains/CLion 2023.1.5/bin/mingw/bin/gcc-ranlib.exe"
+-		},
+-		{
+-			"name" : "CMAKE_C_FLAGS",
+-			"properties" : 
+-			[
+-				{
+-					"name" : "ADVANCED",
+-					"value" : "1"
+-				},
+-				{
+-					"name" : "HELPSTRING",
+-					"value" : "Flags used by the C compiler during all build types."
+-				}
+-			],
+-			"type" : "STRING",
+-			"value" : ""
+-		},
+-		{
+-			"name" : "CMAKE_C_FLAGS_DEBUG",
+-			"properties" : 
+-			[
+-				{
+-					"name" : "ADVANCED",
+-					"value" : "1"
+-				},
+-				{
+-					"name" : "HELPSTRING",
+-					"value" : "Flags used by the C compiler during DEBUG builds."
+-				}
+-			],
+-			"type" : "STRING",
+-			"value" : "-g"
+-		},
+-		{
+-			"name" : "CMAKE_C_FLAGS_MINSIZEREL",
+-			"properties" : 
+-			[
+-				{
+-					"name" : "ADVANCED",
+-					"value" : "1"
+-				},
+-				{
+-					"name" : "HELPSTRING",
+-					"value" : "Flags used by the C compiler during MINSIZEREL builds."
+-				}
+-			],
+-			"type" : "STRING",
+-			"value" : "-Os -DNDEBUG"
+-		},
+-		{
+-			"name" : "CMAKE_C_FLAGS_RELEASE",
+-			"properties" : 
+-			[
+-				{
+-					"name" : "ADVANCED",
+-					"value" : "1"
+-				},
+-				{
+-					"name" : "HELPSTRING",
+-					"value" : "Flags used by the C compiler during RELEASE builds."
+-				}
+-			],
+-			"type" : "STRING",
+-			"value" : "-O3 -DNDEBUG"
+-		},
+-		{
+-			"name" : "CMAKE_C_FLAGS_RELWITHDEBINFO",
+-			"properties" : 
+-			[
+-				{
+-					"name" : "ADVANCED",
+-					"value" : "1"
+-				},
+-				{
+-					"name" : "HELPSTRING",
+-					"value" : "Flags used by the C compiler during RELWITHDEBINFO builds."
+-				}
+-			],
+-			"type" : "STRING",
+-			"value" : "-O2 -g -DNDEBUG"
+-		},
+-		{
+-			"name" : "CMAKE_C_STANDARD_LIBRARIES",
+-			"properties" : 
+-			[
+-				{
+-					"name" : "ADVANCED",
+-					"value" : "1"
+-				},
+-				{
+-					"name" : "HELPSTRING",
+-					"value" : "Libraries linked by default with all C applications."
+-				}
+-			],
+-			"type" : "STRING",
+-			"value" : "-lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32"
+-		},
+-		{
+-			"name" : "CMAKE_DLLTOOL",
+-			"properties" : 
+-			[
+-				{
+-					"name" : "ADVANCED",
+-					"value" : "1"
+-				},
+-				{
+-					"name" : "HELPSTRING",
+-					"value" : "Path to a program."
+-				}
+-			],
+-			"type" : "FILEPATH",
+-			"value" : "C:/Program Files/JetBrains/CLion 2023.1.5/bin/mingw/bin/dlltool.exe"
+-		},
+-		{
+-			"name" : "CMAKE_EXECUTABLE_FORMAT",
+-			"properties" : 
+-			[
+-				{
+-					"name" : "HELPSTRING",
+-					"value" : "Executable file format"
+-				}
+-			],
+-			"type" : "INTERNAL",
+-			"value" : "Unknown"
+-		},
+-		{
+-			"name" : "CMAKE_EXE_LINKER_FLAGS",
+-			"properties" : 
+-			[
+-				{
+-					"name" : "ADVANCED",
+-					"value" : "1"
+-				},
+-				{
+-					"name" : "HELPSTRING",
+-					"value" : "Flags used by the linker during all build types."
+-				}
+-			],
+-			"type" : "STRING",
+-			"value" : ""
+-		},
+-		{
+-			"name" : "CMAKE_EXE_LINKER_FLAGS_DEBUG",
+-			"properties" : 
+-			[
+-				{
+-					"name" : "ADVANCED",
+-					"value" : "1"
+-				},
+-				{
+-					"name" : "HELPSTRING",
+-					"value" : "Flags used by the linker during DEBUG builds."
+-				}
+-			],
+-			"type" : "STRING",
+-			"value" : ""
+-		},
+-		{
+-			"name" : "CMAKE_EXE_LINKER_FLAGS_MINSIZEREL",
+-			"properties" : 
+-			[
+-				{
+-					"name" : "ADVANCED",
+-					"value" : "1"
+-				},
+-				{
+-					"name" : "HELPSTRING",
+-					"value" : "Flags used by the linker during MINSIZEREL builds."
+-				}
+-			],
+-			"type" : "STRING",
+-			"value" : ""
+-		},
+-		{
+-			"name" : "CMAKE_EXE_LINKER_FLAGS_RELEASE",
+-			"properties" : 
+-			[
+-				{
+-					"name" : "ADVANCED",
+-					"value" : "1"
+-				},
+-				{
+-					"name" : "HELPSTRING",
+-					"value" : "Flags used by the linker during RELEASE builds."
+-				}
+-			],
+-			"type" : "STRING",
+-			"value" : ""
+-		},
+-		{
+-			"name" : "CMAKE_EXE_LINKER_FLAGS_RELWITHDEBINFO",
+-			"properties" : 
+-			[
+-				{
+-					"name" : "ADVANCED",
+-					"value" : "1"
+-				},
+-				{
+-					"name" : "HELPSTRING",
+-					"value" : "Flags used by the linker during RELWITHDEBINFO builds."
+-				}
+-			],
+-			"type" : "STRING",
+-			"value" : ""
+-		},
+-		{
+-			"name" : "CMAKE_EXPORT_COMPILE_COMMANDS",
+-			"properties" : 
+-			[
+-				{
+-					"name" : "ADVANCED",
+-					"value" : "1"
+-				},
+-				{
+-					"name" : "HELPSTRING",
+-					"value" : "Enable/Disable output of compile commands during generation."
+-				}
+-			],
+-			"type" : "BOOL",
+-			"value" : ""
+-		},
+-		{
+-			"name" : "CMAKE_EXTRA_GENERATOR",
+-			"properties" : 
+-			[
+-				{
+-					"name" : "HELPSTRING",
+-					"value" : "Name of external makefile project generator."
+-				}
+-			],
+-			"type" : "INTERNAL",
+-			"value" : ""
+-		},
+-		{
+-			"name" : "CMAKE_FIND_PACKAGE_REDIRECTS_DIR",
+-			"properties" : 
+-			[
+-				{
+-					"name" : "HELPSTRING",
+-					"value" : "Value Computed by CMake."
+-				}
+-			],
+-			"type" : "STATIC",
+-			"value" : "C:/Users/MDL/Desktop/C_DataStructure/List/cmake-build-debug/CMakeFiles/pkgRedirects"
+-		},
+-		{
+-			"name" : "CMAKE_GENERATOR",
+-			"properties" : 
+-			[
+-				{
+-					"name" : "HELPSTRING",
+-					"value" : "Name of generator."
+-				}
+-			],
+-			"type" : "INTERNAL",
+-			"value" : "Ninja"
+-		},
+-		{
+-			"name" : "CMAKE_GENERATOR_INSTANCE",
+-			"properties" : 
+-			[
+-				{
+-					"name" : "HELPSTRING",
+-					"value" : "Generator instance identifier."
+-				}
+-			],
+-			"type" : "INTERNAL",
+-			"value" : ""
+-		},
+-		{
+-			"name" : "CMAKE_GENERATOR_PLATFORM",
+-			"properties" : 
+-			[
+-				{
+-					"name" : "HELPSTRING",
+-					"value" : "Name of generator platform."
+-				}
+-			],
+-			"type" : "INTERNAL",
+-			"value" : ""
+-		},
+-		{
+-			"name" : "CMAKE_GENERATOR_TOOLSET",
+-			"properties" : 
+-			[
+-				{
+-					"name" : "HELPSTRING",
+-					"value" : "Name of generator toolset."
+-				}
+-			],
+-			"type" : "INTERNAL",
+-			"value" : ""
+-		},
+-		{
+-			"name" : "CMAKE_GNUtoMS",
+-			"properties" : 
+-			[
+-				{
+-					"name" : "HELPSTRING",
+-					"value" : "Convert GNU import libraries to MS format (requires Visual Studio)"
+-				}
+-			],
+-			"type" : "BOOL",
+-			"value" : "OFF"
+-		},
+-		{
+-			"name" : "CMAKE_HOME_DIRECTORY",
+-			"properties" : 
+-			[
+-				{
+-					"name" : "HELPSTRING",
+-					"value" : "Source directory with the top level CMakeLists.txt file for this project"
+-				}
+-			],
+-			"type" : "INTERNAL",
+-			"value" : "C:/Users/MDL/Desktop/C_DataStructure/List"
+-		},
+-		{
+-			"name" : "CMAKE_INSTALL_PREFIX",
+-			"properties" : 
+-			[
+-				{
+-					"name" : "HELPSTRING",
+-					"value" : "Install path prefix, prepended onto install directories."
+-				}
+-			],
+-			"type" : "PATH",
+-			"value" : "C:/Program Files (x86)/List"
+-		},
+-		{
+-			"name" : "CMAKE_LINKER",
+-			"properties" : 
+-			[
+-				{
+-					"name" : "ADVANCED",
+-					"value" : "1"
+-				},
+-				{
+-					"name" : "HELPSTRING",
+-					"value" : "Path to a program."
+-				}
+-			],
+-			"type" : "FILEPATH",
+-			"value" : "C:/Program Files/JetBrains/CLion 2023.1.5/bin/mingw/bin/ld.exe"
+-		},
+-		{
+-			"name" : "CMAKE_MAKE_PROGRAM",
+-			"properties" : 
+-			[
+-				{
+-					"name" : "HELPSTRING",
+-					"value" : "make program"
+-				}
+-			],
+-			"type" : "FILEPATH",
+-			"value" : "C:/PROGRA~1/JETBRA~1/CLION2~1.5/bin/ninja/win/x64/ninja.exe"
+-		},
+-		{
+-			"name" : "CMAKE_MODULE_LINKER_FLAGS",
+-			"properties" : 
+-			[
+-				{
+-					"name" : "ADVANCED",
+-					"value" : "1"
+-				},
+-				{
+-					"name" : "HELPSTRING",
+-					"value" : "Flags used by the linker during the creation of modules during all build types."
+-				}
+-			],
+-			"type" : "STRING",
+-			"value" : ""
+-		},
+-		{
+-			"name" : "CMAKE_MODULE_LINKER_FLAGS_DEBUG",
+-			"properties" : 
+-			[
+-				{
+-					"name" : "ADVANCED",
+-					"value" : "1"
+-				},
+-				{
+-					"name" : "HELPSTRING",
+-					"value" : "Flags used by the linker during the creation of modules during DEBUG builds."
+-				}
+-			],
+-			"type" : "STRING",
+-			"value" : ""
+-		},
+-		{
+-			"name" : "CMAKE_MODULE_LINKER_FLAGS_MINSIZEREL",
+-			"properties" : 
+-			[
+-				{
+-					"name" : "ADVANCED",
+-					"value" : "1"
+-				},
+-				{
+-					"name" : "HELPSTRING",
+-					"value" : "Flags used by the linker during the creation of modules during MINSIZEREL builds."
+-				}
+-			],
+-			"type" : "STRING",
+-			"value" : ""
+-		},
+-		{
+-			"name" : "CMAKE_MODULE_LINKER_FLAGS_RELEASE",
+-			"properties" : 
+-			[
+-				{
+-					"name" : "ADVANCED",
+-					"value" : "1"
+-				},
+-				{
+-					"name" : "HELPSTRING",
+-					"value" : "Flags used by the linker during the creation of modules during RELEASE builds."
+-				}
+-			],
+-			"type" : "STRING",
+-			"value" : ""
+-		},
+-		{
+-			"name" : "CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO",
+-			"properties" : 
+-			[
+-				{
+-					"name" : "ADVANCED",
+-					"value" : "1"
+-				},
+-				{
+-					"name" : "HELPSTRING",
+-					"value" : "Flags used by the linker during the creation of modules during RELWITHDEBINFO builds."
+-				}
+-			],
+-			"type" : "STRING",
+-			"value" : ""
+-		},
+-		{
+-			"name" : "CMAKE_NM",
+-			"properties" : 
+-			[
+-				{
+-					"name" : "ADVANCED",
+-					"value" : "1"
+-				},
+-				{
+-					"name" : "HELPSTRING",
+-					"value" : "Path to a program."
+-				}
+-			],
+-			"type" : "FILEPATH",
+-			"value" : "C:/Program Files/JetBrains/CLion 2023.1.5/bin/mingw/bin/nm.exe"
+-		},
+-		{
+-			"name" : "CMAKE_NUMBER_OF_MAKEFILES",
+-			"properties" : 
+-			[
+-				{
+-					"name" : "HELPSTRING",
+-					"value" : "number of local generators"
+-				}
+-			],
+-			"type" : "INTERNAL",
+-			"value" : "1"
+-		},
+-		{
+-			"name" : "CMAKE_OBJCOPY",
+-			"properties" : 
+-			[
+-				{
+-					"name" : "ADVANCED",
+-					"value" : "1"
+-				},
+-				{
+-					"name" : "HELPSTRING",
+-					"value" : "Path to a program."
+-				}
+-			],
+-			"type" : "FILEPATH",
+-			"value" : "C:/Program Files/JetBrains/CLion 2023.1.5/bin/mingw/bin/objcopy.exe"
+-		},
+-		{
+-			"name" : "CMAKE_OBJDUMP",
+-			"properties" : 
+-			[
+-				{
+-					"name" : "ADVANCED",
+-					"value" : "1"
+-				},
+-				{
+-					"name" : "HELPSTRING",
+-					"value" : "Path to a program."
+-				}
+-			],
+-			"type" : "FILEPATH",
+-			"value" : "C:/Program Files/JetBrains/CLion 2023.1.5/bin/mingw/bin/objdump.exe"
+-		},
+-		{
+-			"name" : "CMAKE_PLATFORM_INFO_INITIALIZED",
+-			"properties" : 
+-			[
+-				{
+-					"name" : "HELPSTRING",
+-					"value" : "Platform information initialized"
+-				}
+-			],
+-			"type" : "INTERNAL",
+-			"value" : "1"
+-		},
+-		{
+-			"name" : "CMAKE_PROJECT_DESCRIPTION",
+-			"properties" : 
+-			[
+-				{
+-					"name" : "HELPSTRING",
+-					"value" : "Value Computed by CMake"
+-				}
+-			],
+-			"type" : "STATIC",
+-			"value" : ""
+-		},
+-		{
+-			"name" : "CMAKE_PROJECT_HOMEPAGE_URL",
+-			"properties" : 
+-			[
+-				{
+-					"name" : "HELPSTRING",
+-					"value" : "Value Computed by CMake"
+-				}
+-			],
+-			"type" : "STATIC",
+-			"value" : ""
+-		},
+-		{
+-			"name" : "CMAKE_PROJECT_NAME",
+-			"properties" : 
+-			[
+-				{
+-					"name" : "HELPSTRING",
+-					"value" : "Value Computed by CMake"
+-				}
+-			],
+-			"type" : "STATIC",
+-			"value" : "List"
+-		},
+-		{
+-			"name" : "CMAKE_RANLIB",
+-			"properties" : 
+-			[
+-				{
+-					"name" : "ADVANCED",
+-					"value" : "1"
+-				},
+-				{
+-					"name" : "HELPSTRING",
+-					"value" : "Path to a program."
+-				}
+-			],
+-			"type" : "FILEPATH",
+-			"value" : "C:/Program Files/JetBrains/CLion 2023.1.5/bin/mingw/bin/ranlib.exe"
+-		},
+-		{
+-			"name" : "CMAKE_RC_COMPILER",
+-			"properties" : 
+-			[
+-				{
+-					"name" : "ADVANCED",
+-					"value" : "1"
+-				},
+-				{
+-					"name" : "HELPSTRING",
+-					"value" : "RC compiler"
+-				}
+-			],
+-			"type" : "FILEPATH",
+-			"value" : "C:/Program Files/JetBrains/CLion 2023.1.5/bin/mingw/bin/windres.exe"
+-		},
+-		{
+-			"name" : "CMAKE_RC_COMPILER_WORKS",
+-			"properties" : 
+-			[
+-				{
+-					"name" : "HELPSTRING",
+-					"value" : ""
+-				}
+-			],
+-			"type" : "INTERNAL",
+-			"value" : "1"
+-		},
+-		{
+-			"name" : "CMAKE_RC_FLAGS",
+-			"properties" : 
+-			[
+-				{
+-					"name" : "ADVANCED",
+-					"value" : "1"
+-				},
+-				{
+-					"name" : "HELPSTRING",
+-					"value" : "Flags for Windows Resource Compiler during all build types."
+-				}
+-			],
+-			"type" : "STRING",
+-			"value" : ""
+-		},
+-		{
+-			"name" : "CMAKE_RC_FLAGS_DEBUG",
+-			"properties" : 
+-			[
+-				{
+-					"name" : "ADVANCED",
+-					"value" : "1"
+-				},
+-				{
+-					"name" : "HELPSTRING",
+-					"value" : "Flags for Windows Resource Compiler during DEBUG builds."
+-				}
+-			],
+-			"type" : "STRING",
+-			"value" : ""
+-		},
+-		{
+-			"name" : "CMAKE_RC_FLAGS_MINSIZEREL",
+-			"properties" : 
+-			[
+-				{
+-					"name" : "ADVANCED",
+-					"value" : "1"
+-				},
+-				{
+-					"name" : "HELPSTRING",
+-					"value" : "Flags for Windows Resource Compiler during MINSIZEREL builds."
+-				}
+-			],
+-			"type" : "STRING",
+-			"value" : ""
+-		},
+-		{
+-			"name" : "CMAKE_RC_FLAGS_RELEASE",
+-			"properties" : 
+-			[
+-				{
+-					"name" : "ADVANCED",
+-					"value" : "1"
+-				},
+-				{
+-					"name" : "HELPSTRING",
+-					"value" : "Flags for Windows Resource Compiler during RELEASE builds."
+-				}
+-			],
+-			"type" : "STRING",
+-			"value" : ""
+-		},
+-		{
+-			"name" : "CMAKE_RC_FLAGS_RELWITHDEBINFO",
+-			"properties" : 
+-			[
+-				{
+-					"name" : "ADVANCED",
+-					"value" : "1"
+-				},
+-				{
+-					"name" : "HELPSTRING",
+-					"value" : "Flags for Windows Resource Compiler during RELWITHDEBINFO builds."
+-				}
+-			],
+-			"type" : "STRING",
+-			"value" : ""
+-		},
+-		{
+-			"name" : "CMAKE_READELF",
+-			"properties" : 
+-			[
+-				{
+-					"name" : "ADVANCED",
+-					"value" : "1"
+-				},
+-				{
+-					"name" : "HELPSTRING",
+-					"value" : "Path to a program."
+-				}
+-			],
+-			"type" : "FILEPATH",
+-			"value" : "C:/Program Files/JetBrains/CLion 2023.1.5/bin/mingw/bin/readelf.exe"
+-		},
+-		{
+-			"name" : "CMAKE_ROOT",
+-			"properties" : 
+-			[
+-				{
+-					"name" : "HELPSTRING",
+-					"value" : "Path to CMake installation."
+-				}
+-			],
+-			"type" : "INTERNAL",
+-			"value" : "C:/Program Files/JetBrains/CLion 2023.1.5/bin/cmake/win/x64/share/cmake-3.27"
+-		},
+-		{
+-			"name" : "CMAKE_SHARED_LINKER_FLAGS",
+-			"properties" : 
+-			[
+-				{
+-					"name" : "ADVANCED",
+-					"value" : "1"
+-				},
+-				{
+-					"name" : "HELPSTRING",
+-					"value" : "Flags used by the linker during the creation of shared libraries during all build types."
+-				}
+-			],
+-			"type" : "STRING",
+-			"value" : ""
+-		},
+-		{
+-			"name" : "CMAKE_SHARED_LINKER_FLAGS_DEBUG",
+-			"properties" : 
+-			[
+-				{
+-					"name" : "ADVANCED",
+-					"value" : "1"
+-				},
+-				{
+-					"name" : "HELPSTRING",
+-					"value" : "Flags used by the linker during the creation of shared libraries during DEBUG builds."
+-				}
+-			],
+-			"type" : "STRING",
+-			"value" : ""
+-		},
+-		{
+-			"name" : "CMAKE_SHARED_LINKER_FLAGS_MINSIZEREL",
+-			"properties" : 
+-			[
+-				{
+-					"name" : "ADVANCED",
+-					"value" : "1"
+-				},
+-				{
+-					"name" : "HELPSTRING",
+-					"value" : "Flags used by the linker during the creation of shared libraries during MINSIZEREL builds."
+-				}
+-			],
+-			"type" : "STRING",
+-			"value" : ""
+-		},
+-		{
+-			"name" : "CMAKE_SHARED_LINKER_FLAGS_RELEASE",
+-			"properties" : 
+-			[
+-				{
+-					"name" : "ADVANCED",
+-					"value" : "1"
+-				},
+-				{
+-					"name" : "HELPSTRING",
+-					"value" : "Flags used by the linker during the creation of shared libraries during RELEASE builds."
+-				}
+-			],
+-			"type" : "STRING",
+-			"value" : ""
+-		},
+-		{
+-			"name" : "CMAKE_SHARED_LINKER_FLAGS_RELWITHDEBINFO",
+-			"properties" : 
+-			[
+-				{
+-					"name" : "ADVANCED",
+-					"value" : "1"
+-				},
+-				{
+-					"name" : "HELPSTRING",
+-					"value" : "Flags used by the linker during the creation of shared libraries during RELWITHDEBINFO builds."
+-				}
+-			],
+-			"type" : "STRING",
+-			"value" : ""
+-		},
+-		{
+-			"name" : "CMAKE_SKIP_INSTALL_RPATH",
+-			"properties" : 
+-			[
+-				{
+-					"name" : "ADVANCED",
+-					"value" : "1"
+-				},
+-				{
+-					"name" : "HELPSTRING",
+-					"value" : "If set, runtime paths are not added when installing shared libraries, but are added when building."
+-				}
+-			],
+-			"type" : "BOOL",
+-			"value" : "NO"
+-		},
+-		{
+-			"name" : "CMAKE_SKIP_RPATH",
+-			"properties" : 
+-			[
+-				{
+-					"name" : "ADVANCED",
+-					"value" : "1"
+-				},
+-				{
+-					"name" : "HELPSTRING",
+-					"value" : "If set, runtime paths are not added when using shared libraries."
+-				}
+-			],
+-			"type" : "BOOL",
+-			"value" : "NO"
+-		},
+-		{
+-			"name" : "CMAKE_STATIC_LINKER_FLAGS",
+-			"properties" : 
+-			[
+-				{
+-					"name" : "ADVANCED",
+-					"value" : "1"
+-				},
+-				{
+-					"name" : "HELPSTRING",
+-					"value" : "Flags used by the linker during the creation of static libraries during all build types."
+-				}
+-			],
+-			"type" : "STRING",
+-			"value" : ""
+-		},
+-		{
+-			"name" : "CMAKE_STATIC_LINKER_FLAGS_DEBUG",
+-			"properties" : 
+-			[
+-				{
+-					"name" : "ADVANCED",
+-					"value" : "1"
+-				},
+-				{
+-					"name" : "HELPSTRING",
+-					"value" : "Flags used by the linker during the creation of static libraries during DEBUG builds."
+-				}
+-			],
+-			"type" : "STRING",
+-			"value" : ""
+-		},
+-		{
+-			"name" : "CMAKE_STATIC_LINKER_FLAGS_MINSIZEREL",
+-			"properties" : 
+-			[
+-				{
+-					"name" : "ADVANCED",
+-					"value" : "1"
+-				},
+-				{
+-					"name" : "HELPSTRING",
+-					"value" : "Flags used by the linker during the creation of static libraries during MINSIZEREL builds."
+-				}
+-			],
+-			"type" : "STRING",
+-			"value" : ""
+-		},
+-		{
+-			"name" : "CMAKE_STATIC_LINKER_FLAGS_RELEASE",
+-			"properties" : 
+-			[
+-				{
+-					"name" : "ADVANCED",
+-					"value" : "1"
+-				},
+-				{
+-					"name" : "HELPSTRING",
+-					"value" : "Flags used by the linker during the creation of static libraries during RELEASE builds."
+-				}
+-			],
+-			"type" : "STRING",
+-			"value" : ""
+-		},
+-		{
+-			"name" : "CMAKE_STATIC_LINKER_FLAGS_RELWITHDEBINFO",
+-			"properties" : 
+-			[
+-				{
+-					"name" : "ADVANCED",
+-					"value" : "1"
+-				},
+-				{
+-					"name" : "HELPSTRING",
+-					"value" : "Flags used by the linker during the creation of static libraries during RELWITHDEBINFO builds."
+-				}
+-			],
+-			"type" : "STRING",
+-			"value" : ""
+-		},
+-		{
+-			"name" : "CMAKE_STRIP",
+-			"properties" : 
+-			[
+-				{
+-					"name" : "ADVANCED",
+-					"value" : "1"
+-				},
+-				{
+-					"name" : "HELPSTRING",
+-					"value" : "Path to a program."
+-				}
+-			],
+-			"type" : "FILEPATH",
+-			"value" : "C:/Program Files/JetBrains/CLion 2023.1.5/bin/mingw/bin/strip.exe"
+-		},
+-		{
+-			"name" : "CMAKE_TAPI",
+-			"properties" : 
+-			[
+-				{
+-					"name" : "ADVANCED",
+-					"value" : "1"
+-				},
+-				{
+-					"name" : "HELPSTRING",
+-					"value" : "Path to a program."
+-				}
+-			],
+-			"type" : "FILEPATH",
+-			"value" : "CMAKE_TAPI-NOTFOUND"
+-		},
+-		{
+-			"name" : "CMAKE_VERBOSE_MAKEFILE",
+-			"properties" : 
+-			[
+-				{
+-					"name" : "ADVANCED",
+-					"value" : "1"
+-				},
+-				{
+-					"name" : "HELPSTRING",
+-					"value" : "If this value is on, makefiles will be generated without the .SILENT directive, and all commands will be echoed to the console during the make.  This is useful for debugging only. With Visual Studio IDE projects all commands are done without /nologo."
+-				}
+-			],
+-			"type" : "BOOL",
+-			"value" : "FALSE"
+-		},
+-		{
+-			"name" : "List_BINARY_DIR",
+-			"properties" : 
+-			[
+-				{
+-					"name" : "HELPSTRING",
+-					"value" : "Value Computed by CMake"
+-				}
+-			],
+-			"type" : "STATIC",
+-			"value" : "C:/Users/MDL/Desktop/C_DataStructure/List/cmake-build-debug"
+-		},
+-		{
+-			"name" : "List_IS_TOP_LEVEL",
+-			"properties" : 
+-			[
+-				{
+-					"name" : "HELPSTRING",
+-					"value" : "Value Computed by CMake"
+-				}
+-			],
+-			"type" : "STATIC",
+-			"value" : "ON"
+-		},
+-		{
+-			"name" : "List_SOURCE_DIR",
+-			"properties" : 
+-			[
+-				{
+-					"name" : "HELPSTRING",
+-					"value" : "Value Computed by CMake"
+-				}
+-			],
+-			"type" : "STATIC",
+-			"value" : "C:/Users/MDL/Desktop/C_DataStructure/List"
+-		},
+-		{
+-			"name" : "_CMAKE_LINKER_PUSHPOP_STATE_SUPPORTED",
+-			"properties" : 
+-			[
+-				{
+-					"name" : "HELPSTRING",
+-					"value" : "linker supports push/pop state"
+-				}
+-			],
+-			"type" : "INTERNAL",
+-			"value" : "TRUE"
+-		}
+-	],
+-	"kind" : "cache",
+-	"version" : 
+-	{
+-		"major" : 2,
+-		"minor" : 0
+-	}
+-}
+Index: cmake-build-debug/CMakeCache.txt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+># This is the CMakeCache file.\r\n# For build in directory: c:/Users/MDL/Desktop/C_DataStructure/List/cmake-build-debug\r\n# It was generated by CMake: C:/Program Files/JetBrains/CLion 2023.1.5/bin/cmake/win/x64/bin/cmake.exe\r\n# You can edit this file to change values found and used by cmake.\r\n# If you do not want to change any of the values, simply exit the editor.\r\n# If you do want to change a value, simply edit, save, and exit the editor.\r\n# The syntax for the file is as follows:\r\n# KEY:TYPE=VALUE\r\n# KEY is the name of a variable in the cache.\r\n# TYPE is a hint to GUIs for the type of VALUE, DO NOT EDIT TYPE!.\r\n# VALUE is the current value for the KEY.\r\n\r\n########################\r\n# EXTERNAL cache entries\r\n########################\r\n\r\n//Path to a program.\r\nCMAKE_ADDR2LINE:FILEPATH=C:/Program Files/JetBrains/CLion 2023.1.5/bin/mingw/bin/addr2line.exe\r\n\r\n//Path to a program.\r\nCMAKE_AR:FILEPATH=C:/Program Files/JetBrains/CLion 2023.1.5/bin/mingw/bin/ar.exe\r\n\r\n//Choose the type of build, options are: None Debug Release RelWithDebInfo\r\n// MinSizeRel ...\r\nCMAKE_BUILD_TYPE:STRING=Debug\r\n\r\n//Enable colored diagnostics throughout.\r\nCMAKE_COLOR_DIAGNOSTICS:BOOL=ON\r\n\r\n//C compiler\r\nCMAKE_C_COMPILER:FILEPATH=C:/Program Files/JetBrains/CLion 2023.1.5/bin/mingw/bin/gcc.exe\r\n\r\n//A wrapper around 'ar' adding the appropriate '--plugin' option\r\n// for the GCC compiler\r\nCMAKE_C_COMPILER_AR:FILEPATH=C:/Program Files/JetBrains/CLion 2023.1.5/bin/mingw/bin/gcc-ar.exe\r\n\r\n//A wrapper around 'ranlib' adding the appropriate '--plugin' option\r\n// for the GCC compiler\r\nCMAKE_C_COMPILER_RANLIB:FILEPATH=C:/Program Files/JetBrains/CLion 2023.1.5/bin/mingw/bin/gcc-ranlib.exe\r\n\r\n//Flags used by the C compiler during all build types.\r\nCMAKE_C_FLAGS:STRING=\r\n\r\n//Flags used by the C compiler during DEBUG builds.\r\nCMAKE_C_FLAGS_DEBUG:STRING=-g\r\n\r\n//Flags used by the C compiler during MINSIZEREL builds.\r\nCMAKE_C_FLAGS_MINSIZEREL:STRING=-Os -DNDEBUG\r\n\r\n//Flags used by the C compiler during RELEASE builds.\r\nCMAKE_C_FLAGS_RELEASE:STRING=-O3 -DNDEBUG\r\n\r\n//Flags used by the C compiler during RELWITHDEBINFO builds.\r\nCMAKE_C_FLAGS_RELWITHDEBINFO:STRING=-O2 -g -DNDEBUG\r\n\r\n//Libraries linked by default with all C applications.\r\nCMAKE_C_STANDARD_LIBRARIES:STRING=-lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32\r\n\r\n//Path to a program.\r\nCMAKE_DLLTOOL:FILEPATH=C:/Program Files/JetBrains/CLion 2023.1.5/bin/mingw/bin/dlltool.exe\r\n\r\n//Flags used by the linker during all build types.\r\nCMAKE_EXE_LINKER_FLAGS:STRING=\r\n\r\n//Flags used by the linker during DEBUG builds.\r\nCMAKE_EXE_LINKER_FLAGS_DEBUG:STRING=\r\n\r\n//Flags used by the linker during MINSIZEREL builds.\r\nCMAKE_EXE_LINKER_FLAGS_MINSIZEREL:STRING=\r\n\r\n//Flags used by the linker during RELEASE builds.\r\nCMAKE_EXE_LINKER_FLAGS_RELEASE:STRING=\r\n\r\n//Flags used by the linker during RELWITHDEBINFO builds.\r\nCMAKE_EXE_LINKER_FLAGS_RELWITHDEBINFO:STRING=\r\n\r\n//Enable/Disable output of compile commands during generation.\r\nCMAKE_EXPORT_COMPILE_COMMANDS:BOOL=\r\n\r\n//Value Computed by CMake.\r\nCMAKE_FIND_PACKAGE_REDIRECTS_DIR:STATIC=C:/Users/MDL/Desktop/C_DataStructure/List/cmake-build-debug/CMakeFiles/pkgRedirects\r\n\r\n//Convert GNU import libraries to MS format (requires Visual Studio)\r\nCMAKE_GNUtoMS:BOOL=OFF\r\n\r\n//Install path prefix, prepended onto install directories.\r\nCMAKE_INSTALL_PREFIX:PATH=C:/Program Files (x86)/List\r\n\r\n//Path to a program.\r\nCMAKE_LINKER:FILEPATH=C:/Program Files/JetBrains/CLion 2023.1.5/bin/mingw/bin/ld.exe\r\n\r\n//make program\r\nCMAKE_MAKE_PROGRAM:FILEPATH=C:/PROGRA~1/JETBRA~1/CLION2~1.5/bin/ninja/win/x64/ninja.exe\r\n\r\n//Flags used by the linker during the creation of modules during\r\n// all build types.\r\nCMAKE_MODULE_LINKER_FLAGS:STRING=\r\n\r\n//Flags used by the linker during the creation of modules during\r\n// DEBUG builds.\r\nCMAKE_MODULE_LINKER_FLAGS_DEBUG:STRING=\r\n\r\n//Flags used by the linker during the creation of modules during\r\n// MINSIZEREL builds.\r\nCMAKE_MODULE_LINKER_FLAGS_MINSIZEREL:STRING=\r\n\r\n//Flags used by the linker during the creation of modules during\r\n// RELEASE builds.\r\nCMAKE_MODULE_LINKER_FLAGS_RELEASE:STRING=\r\n\r\n//Flags used by the linker during the creation of modules during\r\n// RELWITHDEBINFO builds.\r\nCMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO:STRING=\r\n\r\n//Path to a program.\r\nCMAKE_NM:FILEPATH=C:/Program Files/JetBrains/CLion 2023.1.5/bin/mingw/bin/nm.exe\r\n\r\n//Path to a program.\r\nCMAKE_OBJCOPY:FILEPATH=C:/Program Files/JetBrains/CLion 2023.1.5/bin/mingw/bin/objcopy.exe\r\n\r\n//Path to a program.\r\nCMAKE_OBJDUMP:FILEPATH=C:/Program Files/JetBrains/CLion 2023.1.5/bin/mingw/bin/objdump.exe\r\n\r\n//Value Computed by CMake\r\nCMAKE_PROJECT_DESCRIPTION:STATIC=\r\n\r\n//Value Computed by CMake\r\nCMAKE_PROJECT_HOMEPAGE_URL:STATIC=\r\n\r\n//Value Computed by CMake\r\nCMAKE_PROJECT_NAME:STATIC=List\r\n\r\n//Path to a program.\r\nCMAKE_RANLIB:FILEPATH=C:/Program Files/JetBrains/CLion 2023.1.5/bin/mingw/bin/ranlib.exe\r\n\r\n//RC compiler\r\nCMAKE_RC_COMPILER:FILEPATH=C:/Program Files/JetBrains/CLion 2023.1.5/bin/mingw/bin/windres.exe\r\n\r\n//Flags for Windows Resource Compiler during all build types.\r\nCMAKE_RC_FLAGS:STRING=\r\n\r\n//Flags for Windows Resource Compiler during DEBUG builds.\r\nCMAKE_RC_FLAGS_DEBUG:STRING=\r\n\r\n//Flags for Windows Resource Compiler during MINSIZEREL builds.\r\nCMAKE_RC_FLAGS_MINSIZEREL:STRING=\r\n\r\n//Flags for Windows Resource Compiler during RELEASE builds.\r\nCMAKE_RC_FLAGS_RELEASE:STRING=\r\n\r\n//Flags for Windows Resource Compiler during RELWITHDEBINFO builds.\r\nCMAKE_RC_FLAGS_RELWITHDEBINFO:STRING=\r\n\r\n//Path to a program.\r\nCMAKE_READELF:FILEPATH=C:/Program Files/JetBrains/CLion 2023.1.5/bin/mingw/bin/readelf.exe\r\n\r\n//Flags used by the linker during the creation of shared libraries\r\n// during all build types.\r\nCMAKE_SHARED_LINKER_FLAGS:STRING=\r\n\r\n//Flags used by the linker during the creation of shared libraries\r\n// during DEBUG builds.\r\nCMAKE_SHARED_LINKER_FLAGS_DEBUG:STRING=\r\n\r\n//Flags used by the linker during the creation of shared libraries\r\n// during MINSIZEREL builds.\r\nCMAKE_SHARED_LINKER_FLAGS_MINSIZEREL:STRING=\r\n\r\n//Flags used by the linker during the creation of shared libraries\r\n// during RELEASE builds.\r\nCMAKE_SHARED_LINKER_FLAGS_RELEASE:STRING=\r\n\r\n//Flags used by the linker during the creation of shared libraries\r\n// during RELWITHDEBINFO builds.\r\nCMAKE_SHARED_LINKER_FLAGS_RELWITHDEBINFO:STRING=\r\n\r\n//If set, runtime paths are not added when installing shared libraries,\r\n// but are added when building.\r\nCMAKE_SKIP_INSTALL_RPATH:BOOL=NO\r\n\r\n//If set, runtime paths are not added when using shared libraries.\r\nCMAKE_SKIP_RPATH:BOOL=NO\r\n\r\n//Flags used by the linker during the creation of static libraries\r\n// during all build types.\r\nCMAKE_STATIC_LINKER_FLAGS:STRING=\r\n\r\n//Flags used by the linker during the creation of static libraries\r\n// during DEBUG builds.\r\nCMAKE_STATIC_LINKER_FLAGS_DEBUG:STRING=\r\n\r\n//Flags used by the linker during the creation of static libraries\r\n// during MINSIZEREL builds.\r\nCMAKE_STATIC_LINKER_FLAGS_MINSIZEREL:STRING=\r\n\r\n//Flags used by the linker during the creation of static libraries\r\n// during RELEASE builds.\r\nCMAKE_STATIC_LINKER_FLAGS_RELEASE:STRING=\r\n\r\n//Flags used by the linker during the creation of static libraries\r\n// during RELWITHDEBINFO builds.\r\nCMAKE_STATIC_LINKER_FLAGS_RELWITHDEBINFO:STRING=\r\n\r\n//Path to a program.\r\nCMAKE_STRIP:FILEPATH=C:/Program Files/JetBrains/CLion 2023.1.5/bin/mingw/bin/strip.exe\r\n\r\n//Path to a program.\r\nCMAKE_TAPI:FILEPATH=CMAKE_TAPI-NOTFOUND\r\n\r\n//If this value is on, makefiles will be generated without the\r\n// .SILENT directive, and all commands will be echoed to the console\r\n// during the make.  This is useful for debugging only. With Visual\r\n// Studio IDE projects all commands are done without /nologo.\r\nCMAKE_VERBOSE_MAKEFILE:BOOL=FALSE\r\n\r\n//Value Computed by CMake\r\nList_BINARY_DIR:STATIC=C:/Users/MDL/Desktop/C_DataStructure/List/cmake-build-debug\r\n\r\n//Value Computed by CMake\r\nList_IS_TOP_LEVEL:STATIC=ON\r\n\r\n//Value Computed by CMake\r\nList_SOURCE_DIR:STATIC=C:/Users/MDL/Desktop/C_DataStructure/List\r\n\r\n\r\n########################\r\n# INTERNAL cache entries\r\n########################\r\n\r\n//ADVANCED property for variable: CMAKE_ADDR2LINE\r\nCMAKE_ADDR2LINE-ADVANCED:INTERNAL=1\r\n//ADVANCED property for variable: CMAKE_AR\r\nCMAKE_AR-ADVANCED:INTERNAL=1\r\n//This is the directory where this CMakeCache.txt was created\r\nCMAKE_CACHEFILE_DIR:INTERNAL=c:/Users/MDL/Desktop/C_DataStructure/List/cmake-build-debug\r\n//Major version of cmake used to create the current loaded cache\r\nCMAKE_CACHE_MAJOR_VERSION:INTERNAL=3\r\n//Minor version of cmake used to create the current loaded cache\r\nCMAKE_CACHE_MINOR_VERSION:INTERNAL=27\r\n//Patch version of cmake used to create the current loaded cache\r\nCMAKE_CACHE_PATCH_VERSION:INTERNAL=8\r\n//Path to CMake executable.\r\nCMAKE_COMMAND:INTERNAL=C:/Program Files/JetBrains/CLion 2023.1.5/bin/cmake/win/x64/bin/cmake.exe\r\n//Path to cpack program executable.\r\nCMAKE_CPACK_COMMAND:INTERNAL=C:/Program Files/JetBrains/CLion 2023.1.5/bin/cmake/win/x64/bin/cpack.exe\r\n//Path to ctest program executable.\r\nCMAKE_CTEST_COMMAND:INTERNAL=C:/Program Files/JetBrains/CLion 2023.1.5/bin/cmake/win/x64/bin/ctest.exe\r\n//ADVANCED property for variable: CMAKE_C_COMPILER\r\nCMAKE_C_COMPILER-ADVANCED:INTERNAL=1\r\n//ADVANCED property for variable: CMAKE_C_COMPILER_AR\r\nCMAKE_C_COMPILER_AR-ADVANCED:INTERNAL=1\r\n//ADVANCED property for variable: CMAKE_C_COMPILER_RANLIB\r\nCMAKE_C_COMPILER_RANLIB-ADVANCED:INTERNAL=1\r\n//ADVANCED property for variable: CMAKE_C_FLAGS\r\nCMAKE_C_FLAGS-ADVANCED:INTERNAL=1\r\n//ADVANCED property for variable: CMAKE_C_FLAGS_DEBUG\r\nCMAKE_C_FLAGS_DEBUG-ADVANCED:INTERNAL=1\r\n//ADVANCED property for variable: CMAKE_C_FLAGS_MINSIZEREL\r\nCMAKE_C_FLAGS_MINSIZEREL-ADVANCED:INTERNAL=1\r\n//ADVANCED property for variable: CMAKE_C_FLAGS_RELEASE\r\nCMAKE_C_FLAGS_RELEASE-ADVANCED:INTERNAL=1\r\n//ADVANCED property for variable: CMAKE_C_FLAGS_RELWITHDEBINFO\r\nCMAKE_C_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1\r\n//ADVANCED property for variable: CMAKE_C_STANDARD_LIBRARIES\r\nCMAKE_C_STANDARD_LIBRARIES-ADVANCED:INTERNAL=1\r\n//ADVANCED property for variable: CMAKE_DLLTOOL\r\nCMAKE_DLLTOOL-ADVANCED:INTERNAL=1\r\n//Executable file format\r\nCMAKE_EXECUTABLE_FORMAT:INTERNAL=Unknown\r\n//ADVANCED property for variable: CMAKE_EXE_LINKER_FLAGS\r\nCMAKE_EXE_LINKER_FLAGS-ADVANCED:INTERNAL=1\r\n//ADVANCED property for variable: CMAKE_EXE_LINKER_FLAGS_DEBUG\r\nCMAKE_EXE_LINKER_FLAGS_DEBUG-ADVANCED:INTERNAL=1\r\n//ADVANCED property for variable: CMAKE_EXE_LINKER_FLAGS_MINSIZEREL\r\nCMAKE_EXE_LINKER_FLAGS_MINSIZEREL-ADVANCED:INTERNAL=1\r\n//ADVANCED property for variable: CMAKE_EXE_LINKER_FLAGS_RELEASE\r\nCMAKE_EXE_LINKER_FLAGS_RELEASE-ADVANCED:INTERNAL=1\r\n//ADVANCED property for variable: CMAKE_EXE_LINKER_FLAGS_RELWITHDEBINFO\r\nCMAKE_EXE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1\r\n//ADVANCED property for variable: CMAKE_EXPORT_COMPILE_COMMANDS\r\nCMAKE_EXPORT_COMPILE_COMMANDS-ADVANCED:INTERNAL=1\r\n//Name of external makefile project generator.\r\nCMAKE_EXTRA_GENERATOR:INTERNAL=\r\n//Name of generator.\r\nCMAKE_GENERATOR:INTERNAL=Ninja\r\n//Generator instance identifier.\r\nCMAKE_GENERATOR_INSTANCE:INTERNAL=\r\n//Name of generator platform.\r\nCMAKE_GENERATOR_PLATFORM:INTERNAL=\r\n//Name of generator toolset.\r\nCMAKE_GENERATOR_TOOLSET:INTERNAL=\r\n//Source directory with the top level CMakeLists.txt file for this\r\n// project\r\nCMAKE_HOME_DIRECTORY:INTERNAL=C:/Users/MDL/Desktop/C_DataStructure/List\r\n//ADVANCED property for variable: CMAKE_LINKER\r\nCMAKE_LINKER-ADVANCED:INTERNAL=1\r\n//ADVANCED property for variable: CMAKE_MODULE_LINKER_FLAGS\r\nCMAKE_MODULE_LINKER_FLAGS-ADVANCED:INTERNAL=1\r\n//ADVANCED property for variable: CMAKE_MODULE_LINKER_FLAGS_DEBUG\r\nCMAKE_MODULE_LINKER_FLAGS_DEBUG-ADVANCED:INTERNAL=1\r\n//ADVANCED property for variable: CMAKE_MODULE_LINKER_FLAGS_MINSIZEREL\r\nCMAKE_MODULE_LINKER_FLAGS_MINSIZEREL-ADVANCED:INTERNAL=1\r\n//ADVANCED property for variable: CMAKE_MODULE_LINKER_FLAGS_RELEASE\r\nCMAKE_MODULE_LINKER_FLAGS_RELEASE-ADVANCED:INTERNAL=1\r\n//ADVANCED property for variable: CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO\r\nCMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1\r\n//ADVANCED property for variable: CMAKE_NM\r\nCMAKE_NM-ADVANCED:INTERNAL=1\r\n//number of local generators\r\nCMAKE_NUMBER_OF_MAKEFILES:INTERNAL=1\r\n//ADVANCED property for variable: CMAKE_OBJCOPY\r\nCMAKE_OBJCOPY-ADVANCED:INTERNAL=1\r\n//ADVANCED property for variable: CMAKE_OBJDUMP\r\nCMAKE_OBJDUMP-ADVANCED:INTERNAL=1\r\n//Platform information initialized\r\nCMAKE_PLATFORM_INFO_INITIALIZED:INTERNAL=1\r\n//ADVANCED property for variable: CMAKE_RANLIB\r\nCMAKE_RANLIB-ADVANCED:INTERNAL=1\r\n//ADVANCED property for variable: CMAKE_RC_COMPILER\r\nCMAKE_RC_COMPILER-ADVANCED:INTERNAL=1\r\nCMAKE_RC_COMPILER_WORKS:INTERNAL=1\r\n//ADVANCED property for variable: CMAKE_RC_FLAGS\r\nCMAKE_RC_FLAGS-ADVANCED:INTERNAL=1\r\n//ADVANCED property for variable: CMAKE_RC_FLAGS_DEBUG\r\nCMAKE_RC_FLAGS_DEBUG-ADVANCED:INTERNAL=1\r\n//ADVANCED property for variable: CMAKE_RC_FLAGS_MINSIZEREL\r\nCMAKE_RC_FLAGS_MINSIZEREL-ADVANCED:INTERNAL=1\r\n//ADVANCED property for variable: CMAKE_RC_FLAGS_RELEASE\r\nCMAKE_RC_FLAGS_RELEASE-ADVANCED:INTERNAL=1\r\n//ADVANCED property for variable: CMAKE_RC_FLAGS_RELWITHDEBINFO\r\nCMAKE_RC_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1\r\n//ADVANCED property for variable: CMAKE_READELF\r\nCMAKE_READELF-ADVANCED:INTERNAL=1\r\n//Path to CMake installation.\r\nCMAKE_ROOT:INTERNAL=C:/Program Files/JetBrains/CLion 2023.1.5/bin/cmake/win/x64/share/cmake-3.27\r\n//ADVANCED property for variable: CMAKE_SHARED_LINKER_FLAGS\r\nCMAKE_SHARED_LINKER_FLAGS-ADVANCED:INTERNAL=1\r\n//ADVANCED property for variable: CMAKE_SHARED_LINKER_FLAGS_DEBUG\r\nCMAKE_SHARED_LINKER_FLAGS_DEBUG-ADVANCED:INTERNAL=1\r\n//ADVANCED property for variable: CMAKE_SHARED_LINKER_FLAGS_MINSIZEREL\r\nCMAKE_SHARED_LINKER_FLAGS_MINSIZEREL-ADVANCED:INTERNAL=1\r\n//ADVANCED property for variable: CMAKE_SHARED_LINKER_FLAGS_RELEASE\r\nCMAKE_SHARED_LINKER_FLAGS_RELEASE-ADVANCED:INTERNAL=1\r\n//ADVANCED property for variable: CMAKE_SHARED_LINKER_FLAGS_RELWITHDEBINFO\r\nCMAKE_SHARED_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1\r\n//ADVANCED property for variable: CMAKE_SKIP_INSTALL_RPATH\r\nCMAKE_SKIP_INSTALL_RPATH-ADVANCED:INTERNAL=1\r\n//ADVANCED property for variable: CMAKE_SKIP_RPATH\r\nCMAKE_SKIP_RPATH-ADVANCED:INTERNAL=1\r\n//ADVANCED property for variable: CMAKE_STATIC_LINKER_FLAGS\r\nCMAKE_STATIC_LINKER_FLAGS-ADVANCED:INTERNAL=1\r\n//ADVANCED property for variable: CMAKE_STATIC_LINKER_FLAGS_DEBUG\r\nCMAKE_STATIC_LINKER_FLAGS_DEBUG-ADVANCED:INTERNAL=1\r\n//ADVANCED property for variable: CMAKE_STATIC_LINKER_FLAGS_MINSIZEREL\r\nCMAKE_STATIC_LINKER_FLAGS_MINSIZEREL-ADVANCED:INTERNAL=1\r\n//ADVANCED property for variable: CMAKE_STATIC_LINKER_FLAGS_RELEASE\r\nCMAKE_STATIC_LINKER_FLAGS_RELEASE-ADVANCED:INTERNAL=1\r\n//ADVANCED property for variable: CMAKE_STATIC_LINKER_FLAGS_RELWITHDEBINFO\r\nCMAKE_STATIC_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1\r\n//ADVANCED property for variable: CMAKE_STRIP\r\nCMAKE_STRIP-ADVANCED:INTERNAL=1\r\n//ADVANCED property for variable: CMAKE_TAPI\r\nCMAKE_TAPI-ADVANCED:INTERNAL=1\r\n//ADVANCED property for variable: CMAKE_VERBOSE_MAKEFILE\r\nCMAKE_VERBOSE_MAKEFILE-ADVANCED:INTERNAL=1\r\n//linker supports push/pop state\r\n_CMAKE_LINKER_PUSHPOP_STATE_SUPPORTED:INTERNAL=TRUE\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/cmake-build-debug/CMakeCache.txt b/cmake-build-debug/CMakeCache.txt
+--- a/cmake-build-debug/CMakeCache.txt	
++++ b/cmake-build-debug/CMakeCache.txt	
+@@ -90,7 +90,7 @@
+ CMAKE_LINKER:FILEPATH=C:/Program Files/JetBrains/CLion 2023.1.5/bin/mingw/bin/ld.exe
+ 
+ //make program
+-CMAKE_MAKE_PROGRAM:FILEPATH=C:/PROGRA~1/JETBRA~1/CLION2~1.5/bin/ninja/win/x64/ninja.exe
++CMAKE_MAKE_PROGRAM:FILEPATH=C:/Program Files/JetBrains/CLion 2023.1.5/bin/ninja/win/x64/ninja.exe
+ 
+ //Flags used by the linker during the creation of modules during
+ // all build types.
+Index: cmake-build-debug/Testing/Temporary/LastTest.log
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>Start testing: Apr 25 23:32 �й���\u05FCʱ��\r\n----------------------------------------------------------\r\nEnd testing: Apr 25 23:32 �й���\u05FCʱ��\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/cmake-build-debug/Testing/Temporary/LastTest.log b/cmake-build-debug/Testing/Temporary/LastTest.log
+--- a/cmake-build-debug/Testing/Temporary/LastTest.log	
++++ b/cmake-build-debug/Testing/Temporary/LastTest.log	
+@@ -1,3 +1,3 @@
+-Start testing: Apr 25 23:32 �й���׼ʱ��
++Start testing: May 07 22:06 �й���׼ʱ��
+ ----------------------------------------------------------
+-End testing: Apr 25 23:32 �й���׼ʱ��
++End testing: May 07 22:06 �й���׼ʱ��
+Index: cmake-build-debug/CMakeFiles/clion-Debug-log.txt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>\"C:\\Program Files\\JetBrains\\CLion 2023.1.5\\bin\\cmake\\win\\x64\\bin\\cmake.exe\" -DCMAKE_BUILD_TYPE=Debug \"-DCMAKE_MAKE_PROGRAM=C:/Program Files/JetBrains/CLion 2023.1.5/bin/ninja/win/x64/ninja.exe\" -G Ninja -S C:\\Users\\MDL\\Desktop\\C_DataStructure\\List -B C:\\Users\\MDL\\Desktop\\C_DataStructure\\List\\cmake-build-debug\r\n-- The C compiler identification is GNU 13.1.0\r\n-- Detecting C compiler ABI info\r\n-- Detecting C compiler ABI info - done\r\n-- Check for working C compiler: C:/Program Files/JetBrains/CLion 2023.1.5/bin/mingw/bin/gcc.exe - skipped\r\n-- Detecting C compile features\r\n-- Detecting C compile features - done\r\n-- Configuring done (1.2s)\r\n-- Generating done (0.0s)\r\n-- Build files have been written to: C:/Users/MDL/Desktop/C_DataStructure/List/cmake-build-debug\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/cmake-build-debug/CMakeFiles/clion-Debug-log.txt b/cmake-build-debug/CMakeFiles/clion-Debug-log.txt
+--- a/cmake-build-debug/CMakeFiles/clion-Debug-log.txt	
++++ b/cmake-build-debug/CMakeFiles/clion-Debug-log.txt	
+@@ -1,10 +1,4 @@
+ "C:\Program Files\JetBrains\CLion 2023.1.5\bin\cmake\win\x64\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug "-DCMAKE_MAKE_PROGRAM=C:/Program Files/JetBrains/CLion 2023.1.5/bin/ninja/win/x64/ninja.exe" -G Ninja -S C:\Users\MDL\Desktop\C_DataStructure\List -B C:\Users\MDL\Desktop\C_DataStructure\List\cmake-build-debug
+--- The C compiler identification is GNU 13.1.0
+--- Detecting C compiler ABI info
+--- Detecting C compiler ABI info - done
+--- Check for working C compiler: C:/Program Files/JetBrains/CLion 2023.1.5/bin/mingw/bin/gcc.exe - skipped
+--- Detecting C compile features
+--- Detecting C compile features - done
+--- Configuring done (1.2s)
++-- Configuring done (0.1s)
+ -- Generating done (0.0s)
+ -- Build files have been written to: C:/Users/MDL/Desktop/C_DataStructure/List/cmake-build-debug
+Index: cmake-build-debug/.ninja_log
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+># ninja log v5\r\n2\t1082\t7357619286803250\tbuild.ninja\te35ec62498d066fe\r\n0\t585\t7357619194696215\tCMakeFiles/List.dir/List.c.obj\td761618271fd4005\r\n594\t1193\t7357619200747104\tList.exe\t158a8a988ce42566\r\n1\t157\t7357619286803250\tbuild.ninja\te35ec62498d066fe\r\n2\t96\t7357619287965414\tCMakeFiles/List.dir/List.c.obj\ta26a98c4e6be94d1\r\n96\t198\t7357619288948746\tList.exe\t158a8a988ce42566\r\n2\t119\t7357623727384916\tCMakeFiles/List.dir/List.c.obj\ta26a98c4e6be94d1\r\n119\t229\t7357623728451389\tList.exe\t158a8a988ce42566\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/cmake-build-debug/.ninja_log b/cmake-build-debug/.ninja_log
+--- a/cmake-build-debug/.ninja_log	
++++ b/cmake-build-debug/.ninja_log	
+@@ -1,9 +1,10 @@
+ # ninja log v5
+-2	1082	7357619286803250	build.ninja	e35ec62498d066fe
+-0	585	7357619194696215	CMakeFiles/List.dir/List.c.obj	d761618271fd4005
+-594	1193	7357619200747104	List.exe	158a8a988ce42566
+-1	157	7357619286803250	build.ninja	e35ec62498d066fe
+-2	96	7357619287965414	CMakeFiles/List.dir/List.c.obj	a26a98c4e6be94d1
+-96	198	7357619288948746	List.exe	158a8a988ce42566
+-2	119	7357623727384916	CMakeFiles/List.dir/List.c.obj	a26a98c4e6be94d1
+-119	229	7357623728451389	List.exe	158a8a988ce42566
++1	157	7357634470765398	build.ninja	e35ec62498d066fe
++2	126	7357631859369480	CMakeFiles/List.dir/List.c.obj	a26a98c4e6be94d1
++126	231	7357631860384620	List.exe	158a8a988ce42566
++3	706	7367938400253461	CMakeFiles/List.dir/List.c.obj	a26a98c4e6be94d1
++707	2235	7367938415511939	List.exe	158a8a988ce42566
++2	125	7367938698403788	CMakeFiles/List.dir/List.c.obj	a26a98c4e6be94d1
++125	248	7367938699589051	List.exe	158a8a988ce42566
++3	128	7367940033990764	CMakeFiles/List.dir/List.c.obj	a26a98c4e6be94d1
++129	247	7367940035133189	List.exe	158a8a988ce42566

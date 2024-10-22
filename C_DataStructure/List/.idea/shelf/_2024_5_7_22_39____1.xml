@@ -1,0 +1,19 @@
+<changelist name="在进行更新之前于_2024_5_7_22_39_取消提交了更改_[更改]1" date="1715092847434" recycled="true" deleted="true">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/在进行更新之前于_2024_5_7_22_39_取消提交了更改_[更改]1/shelved.patch" />
+  <option name="DESCRIPTION" value="在进行更新之前于 2024/5/7 22:39 取消提交了更改 [更改]" />
+  <binary>
+    <option name="BEFORE_PATH" value="cmake-build-debug/.ninja_deps" />
+    <option name="AFTER_PATH" value="cmake-build-debug/.ninja_deps" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/在进行更新之前于_2024_5_7_22_39_取消提交了更改_[更改]1/.ninja_deps" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="cmake-build-debug/CMakeFiles/List.dir/List.c.obj" />
+    <option name="AFTER_PATH" value="cmake-build-debug/CMakeFiles/List.dir/List.c.obj" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/在进行更新之前于_2024_5_7_22_39_取消提交了更改_[更改]1/List.c.obj" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="cmake-build-debug/List.exe" />
+    <option name="AFTER_PATH" value="cmake-build-debug/List.exe" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/在进行更新之前于_2024_5_7_22_39_取消提交了更改_[更改]1/List.exe" />
+  </binary>
+</changelist>

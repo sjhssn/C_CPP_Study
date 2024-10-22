@@ -1,0 +1,4 @@
+/home/mdl7/projects/helloworld/v3/build/CMakeFiles/rebuild_cache.dir
+/home/mdl7/projects/helloworld/v3/build/CMakeFiles/edit_cache.dir
+/home/mdl7/projects/helloworld/v3/build/CMakeFiles/calc.dir
+/home/mdl7/projects/helloworld/v3/build/CMakeFiles/cals.dir

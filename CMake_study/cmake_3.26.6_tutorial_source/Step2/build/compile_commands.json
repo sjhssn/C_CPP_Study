@@ -1,0 +1,14 @@
+[
+{
+  "directory": "C:/Users/MDL/Desktop/Embedded_DEV/CMake_study/cmake_3.26.6_tutorial_source/Step2/build",
+  "command": "C:/mingw64devkit1.22.0/bin/c++.exe  @CMakeFiles/Tutorial.dir/includes_CXX.rsp -g -std=gnu++11 -o CMakeFiles/Tutorial.dir/tutorial.cxx.obj -c C:/Users/MDL/Desktop/Embedded_DEV/CMake_study/cmake_3.26.6_tutorial_source/Step2/tutorial.cxx",
+  "file": "C:/Users/MDL/Desktop/Embedded_DEV/CMake_study/cmake_3.26.6_tutorial_source/Step2/tutorial.cxx",
+  "output": "CMakeFiles/Tutorial.dir/tutorial.cxx.obj"
+},
+{
+  "directory": "C:/Users/MDL/Desktop/Embedded_DEV/CMake_study/cmake_3.26.6_tutorial_source/Step2/build/MathFunctions",
+  "command": "C:/mingw64devkit1.22.0/bin/c++.exe   -g -std=gnu++11 -o CMakeFiles/MathFunctions.dir/mysqrt.cxx.obj -c C:/Users/MDL/Desktop/Embedded_DEV/CMake_study/cmake_3.26.6_tutorial_source/Step2/MathFunctions/mysqrt.cxx",
+  "file": "C:/Users/MDL/Desktop/Embedded_DEV/CMake_study/cmake_3.26.6_tutorial_source/Step2/MathFunctions/mysqrt.cxx",
+  "output": "MathFunctions/CMakeFiles/MathFunctions.dir/mysqrt.cxx.obj"
+}
+]
